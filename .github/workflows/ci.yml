@@ -34,6 +34,13 @@ jobs:
         shell: bash -l {0}
         run: |
           flake8 .
+          
+      - name: Pull data with DVC
+        shell: bash -l {0}
+        run: |
+          pip install dvc
+          dvc pull -q
+
 
       - name: Run pytest
         shell: bash -l {0}
